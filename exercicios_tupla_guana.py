@@ -33,28 +33,28 @@
 #         print('Você digitou uma letra ou não digitou nada. Poderia digitar um numero entre 0 e 20: ')
 
 # 73
-classificacao = (
-    "Botafogo",
-    "Palmeiras",
-    "Flamengo",
-    "Fortaleza",
-    "Internacional",
-    "São Paulo",
-    "Atlético Mineiro",
-    "Fluminense",
-    "Grêmio",
-    "Corinthians",
-    "Santos",
-    "Bragantino",
-    "Cruzeiro",
-    "Bahia",
-    "Vasco",
-    "Goiás",
-    "Athletico Paranaense",
-    "Criciúma",
-    "Atlético Goianiense",
-    "Cuiabá"
-)
+# classificacao = (
+#     "Botafogo",
+#     "Palmeiras",
+#     "Flamengo",
+#     "Fortaleza",
+#     "Internacional",
+#     "São Paulo",
+#     "Atlético Mineiro",
+#     "Fluminense",
+#     "Grêmio",
+#     "Corinthians",
+#     "Santos",
+#     "Bragantino",
+#     "Cruzeiro",
+#     "Bahia",
+#     "Vasco",
+#     "Goiás",
+#     "Athletico Paranaense",
+#     "Criciúma",
+#     "Atlético Goianiense",
+#     "Cuiabá"
+# )
 
 # a) 5 primeiro colocados
 # cinco_primeiros_colocados: str = classificacao[0:5]
@@ -65,9 +65,20 @@ classificacao = (
 # print(f'Os quatro ultimos colocados no Brasileirão forão: {cinco_primeiros_colocados}.')
 
 # c) uma lista com os times em ordem alfabetica
-ordem_alfabetica: str = sorted(classificacao)
-print(ordem_alfabetica)
+# ordem_alfabetica: str = sorted(classificacao)
+# print(ordem_alfabetica)
 
-# d) posicao do goias
-posicao_criciuma: int = classificacao.index("Goiás")+1
-print(posicao_criciuma)
+# d) posicao do goiás
+# posicao_goias: int = classificacao.index("Goiás")+1
+# print(posicao_criciuma)
+
+# 74
+import random
+
+tupla_numeros_aleatorios: tuple = tuple(random.randint(1, 100) for n in range(5))
+resultado = ' '.join(map(str, tupla_numeros_aleatorios))
+valor_minino: int = min(tupla_numeros_aleatorios)
+valor_maximo: int = max(tupla_numeros_aleatorios)
+print(f'Os valores sorteados foram: {resultado}.')
+print(f'O maior valor sorteado foi {valor_maximo}.')
+print(f'O menor valor sorteado foi {valor_minino}.')
