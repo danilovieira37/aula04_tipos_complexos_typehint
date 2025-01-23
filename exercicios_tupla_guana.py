@@ -73,12 +73,33 @@
 # print(posicao_criciuma)
 
 # 74
-import random
+# import random
 
-tupla_numeros_aleatorios: tuple = tuple(random.randint(1, 100) for n in range(5))
-resultado = ' '.join(map(str, tupla_numeros_aleatorios))
-valor_minino: int = min(tupla_numeros_aleatorios)
-valor_maximo: int = max(tupla_numeros_aleatorios)
-print(f'Os valores sorteados foram: {resultado}.')
-print(f'O maior valor sorteado foi {valor_maximo}.')
-print(f'O menor valor sorteado foi {valor_minino}.')
+# tupla_numeros_aleatorios: tuple = tuple(random.randint(1, 100) for n in range(5))
+# resultado = ' '.join(map(str, tupla_numeros_aleatorios))
+# valor_minino: int = min(tupla_numeros_aleatorios)
+# valor_maximo: int = max(tupla_numeros_aleatorios)
+# print(f'Os valores sorteados foram: {resultado}.')
+# print(f'O maior valor sorteado foi {valor_maximo}.')
+# print(f'O menor valor sorteado foi {valor_minino}.')
+
+# 75
+
+a: tuple = 9#(int(input('Digite um número: ')))
+b: tuple = 4#(int(input('Digite outro número: ')))
+c: tuple = 6#(int(input('Digite mais um número: ')))
+d: tuple = 3#(int(input('Digite o último número: ')))
+tupla_numeros: tuple = (a, b, c, d)
+print(f'Você digitou os valores {tupla_numeros}.')
+qtde_x_aparece_9: int = tupla_numeros.count(9)
+print(f'O valor 9 apareceu {qtde_x_aparece_9} vezes.')
+if tupla_numeros.count(3) == 1: 
+    print(f'O valor 3 apareceu na {tupla_numeros.index(4) + 1} posição.')
+elif tupla_numeros.count(3) > 1:
+    print(f'O valor 3 apareceu em mais de uma posição.')
+else:    
+    print(f'O valor 3 não foi digitado em nenhuma posição.')
+valores_pares_tupla: tuple = tuple(valor for valor in tupla_numeros if valor % 2 == 0)
+valores_pares_como_string: str = ' '.join(map(str, valores_pares_tupla))
+
+print(f'Os valores pares digitados foram {valores_pares_como_string}.')
