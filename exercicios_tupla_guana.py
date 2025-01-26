@@ -97,13 +97,13 @@
 # print(f'O menor valor sorteado foi {valor_minino}.')
 
 # correção
-import random
-tupla_numeros_aleatorios: tuple = tuple(random.randint(1, 100) for n in range(5))
-print('Os valores sorteados foram: ', end='')
-for n in tupla_numeros_aleatorios:
-    print(f'{n}', end=' ')
-print(f'\nO maior valor sorteado foi {max(tupla_numeros_aleatorios)}.')
-print(f'O menor valor sorteado foi {min(tupla_numeros_aleatorios)}.')
+# import random
+# tupla_numeros_aleatorios: tuple = tuple(random.randint(1, 100) for n in range(5))
+# print('Os valores sorteados foram: ', end='')
+# for n in tupla_numeros_aleatorios:
+#     print(f'{n}', end=' ')
+# print(f'\nO maior valor sorteado foi {max(tupla_numeros_aleatorios)}.')
+# print(f'O menor valor sorteado foi {min(tupla_numeros_aleatorios)}.')
 
 # 75
 
@@ -125,6 +125,24 @@ print(f'O menor valor sorteado foi {min(tupla_numeros_aleatorios)}.')
 # valores_pares_como_string: str = ' '.join(map(str, valores_pares_tupla))
 
 # print(f'Os valores pares digitados foram {valores_pares_como_string}.')
+
+# correcao 75
+num = (
+    int(input('Digite um número: ')),
+    int(input('Digite outro número: ')),
+    int(input('Digite mais um número: ')),
+    int(input('Digite o último número: ')),
+)
+print(f'Você digitou os valores: {num}')
+print(f'O valor 9 apareceu {num.count(9)} vezes.')
+if 3 in num:
+    print(f'O valor 3 apareceu na {num.index(3)+1} posição.')
+else:
+    print(f'O valor 3 não foi digitado em nenhuma posição.')
+print(f'Os valores pares digitados foram ', end='')
+for n in num:
+    if n % 2 == 0:
+        print(n, end=' ')
 
 # 77
 # vogais = ('a', 'e', 'i', 'o', 'u')
