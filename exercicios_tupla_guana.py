@@ -127,22 +127,38 @@
 # print(f'Os valores pares digitados foram {valores_pares_como_string}.')
 
 # correcao 75
-num = (
-    int(input('Digite um número: ')),
-    int(input('Digite outro número: ')),
-    int(input('Digite mais um número: ')),
-    int(input('Digite o último número: ')),
+# num = (
+#     int(input('Digite um número: ')),
+#     int(input('Digite outro número: ')),
+#     int(input('Digite mais um número: ')),
+#     int(input('Digite o último número: ')),
+# )
+# print(f'Você digitou os valores: {num}')
+# print(f'O valor 9 apareceu {num.count(9)} vezes.')
+# if 3 in num:
+#     print(f'O valor 3 apareceu na {num.index(3)+1} posição.')
+# else:
+#     print(f'O valor 3 não foi digitado em nenhuma posição.')
+# print(f'Os valores pares digitados foram ', end='')
+# for n in num:
+#     if n % 2 == 0:
+#         print(n, end=' ')
+
+# 76 correcao
+listagem: tuple = ('Lápis', 1.75,
+    'Borracha', 2, 
+    'Caderno', 15.9
 )
-print(f'Você digitou os valores: {num}')
-print(f'O valor 9 apareceu {num.count(9)} vezes.')
-if 3 in num:
-    print(f'O valor 3 apareceu na {num.index(3)+1} posição.')
-else:
-    print(f'O valor 3 não foi digitado em nenhuma posição.')
-print(f'Os valores pares digitados foram ', end='')
-for n in num:
-    if n % 2 == 0:
-        print(n, end=' ')
+print('-' * 40)
+print(f'{"LISTAGEM DE PREÇOS":^40}')
+print('-' * 40)
+for pos in range (0, len(listagem)):
+    if pos % 2 == 0:
+        print(f'{listagem[pos]:.<30}', end='')
+    else:
+        print(f'R${listagem[pos]:>7.2f}')
+print('-' * 40)
+
 
 # 77
 # vogais = ('a', 'e', 'i', 'o', 'u')
