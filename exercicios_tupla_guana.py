@@ -145,26 +145,26 @@
 #         print(n, end=' ')
 
 # 76 correcao
-listagem: tuple = ('Lápis', 1.75,
-    'Borracha', 2, 
-    'Caderno', 15.9
-)
-print('-' * 40)
-print(f'{"LISTAGEM DE PREÇOS":^40}')
-print('-' * 40)
-for pos in range (0, len(listagem)):
-    if pos % 2 == 0:
-        print(f'{listagem[pos]:.<30}', end='')
-    else:
-        print(f'R${listagem[pos]:>7.2f}')
-print('-' * 40)
+# listagem: tuple = ('Lápis', 1.75,
+#     'Borracha', 2, 
+#     'Caderno', 15.9
+# )
+# print('-' * 40)
+# print(f'{"LISTAGEM DE PREÇOS":^40}')
+# print('-' * 40)
+# for pos in range (0, len(listagem)):
+#     if pos % 2 == 0:
+#         print(f'{listagem[pos]:.<30}', end='')
+#     else:
+#         print(f'R${listagem[pos]:>7.2f}')
+# print('-' * 40)
 
-
-# 77
-# vogais = ('a', 'e', 'i', 'o', 'u')
-# palavras = ('aprender', 'programar', 'linguagem', 'python')
-
-# for a in palavras:
-    # print(vogais)
-
-#print('-=' * 15)
+# 77 correcao
+palavras: tuple = ('aprender', 'programar', 'linguagem', 'python', 'Bernardo',
+    'Acaua', 'Thamires', 'Danilo')
+vogais: str = 'AEIOU'
+for p in palavras:
+    print(f'\nNa palavra {p.upper()} temos ', end='')
+    for letra in p:
+        if letra.upper() in vogais:
+            print(letra.upper(), end=' ')
