@@ -32,6 +32,18 @@
 #     except ValueError:
 #         print('Você digitou uma letra ou não digitou nada. Poderia digitar um numero entre 0 e 20: ')
 
+## correcao
+# numeros_extensos: str = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove',
+#     'dez', 'onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 
+#     'dezoito', 'dezenove', 'vinte')
+# while True:
+#     num: int = int(input('Digite um número entre 0 e 20: '))
+#     if 0 <= num <= 20:
+#         break
+#     print(f'Você digitou o número {numero_digitado}. Tente novamente. Digite um número entre 0 e 20: ')
+# print(f'Você digitou o número {numero_extenso}')
+
+
 # 73
 # classificacao = (
 #     "Botafogo",
@@ -72,6 +84,7 @@
 # posicao_goias: int = classificacao.index("Goiás")+1
 # print(posicao_criciuma)
 
+
 # 74
 # import random
 
@@ -83,23 +96,41 @@
 # print(f'O maior valor sorteado foi {valor_maximo}.')
 # print(f'O menor valor sorteado foi {valor_minino}.')
 
+# correção
+import random
+tupla_numeros_aleatorios: tuple = tuple(random.randint(1, 100) for n in range(5))
+print('Os valores sorteados foram: ', end='')
+for n in tupla_numeros_aleatorios:
+    print(f'{n}', end=' ')
+print(f'\nO maior valor sorteado foi {max(tupla_numeros_aleatorios)}.')
+print(f'O menor valor sorteado foi {min(tupla_numeros_aleatorios)}.')
+
 # 75
 
-a: tuple = 9#(int(input('Digite um número: ')))
-b: tuple = 4#(int(input('Digite outro número: ')))
-c: tuple = 6#(int(input('Digite mais um número: ')))
-d: tuple = 3#(int(input('Digite o último número: ')))
-tupla_numeros: tuple = (a, b, c, d)
-print(f'Você digitou os valores {tupla_numeros}.')
-qtde_x_aparece_9: int = tupla_numeros.count(9)
-print(f'O valor 9 apareceu {qtde_x_aparece_9} vezes.')
-if tupla_numeros.count(3) == 1: 
-    print(f'O valor 3 apareceu na {tupla_numeros.index(4) + 1} posição.')
-elif tupla_numeros.count(3) > 1:
-    print(f'O valor 3 apareceu em mais de uma posição.')
-else:    
-    print(f'O valor 3 não foi digitado em nenhuma posição.')
-valores_pares_tupla: tuple = tuple(valor for valor in tupla_numeros if valor % 2 == 0)
-valores_pares_como_string: str = ' '.join(map(str, valores_pares_tupla))
+# a: tuple = 9#(int(input('Digite um número: ')))
+# b: tuple = 4#(int(input('Digite outro número: ')))
+# c: tuple = 6#(int(input('Digite mais um número: ')))
+# d: tuple = 3#(int(input('Digite o último número: ')))
+# tupla_numeros: tuple = (a, b, c, d)
+# print(f'Você digitou os valores {tupla_numeros}.')
+# qtde_x_aparece_9: int = tupla_numeros.count(9)
+# print(f'O valor 9 apareceu {qtde_x_aparece_9} vezes.')
+# if tupla_numeros.count(3) == 1: 
+#     print(f'O valor 3 apareceu na {tupla_numeros.index(4) + 1} posição.')
+# elif tupla_numeros.count(3) > 1:
+#     print(f'O valor 3 apareceu em mais de uma posição.')
+# else:    
+#     print(f'O valor 3 não foi digitado em nenhuma posição.')
+# valores_pares_tupla: tuple = tuple(valor for valor in tupla_numeros if valor % 2 == 0)
+# valores_pares_como_string: str = ' '.join(map(str, valores_pares_tupla))
 
-print(f'Os valores pares digitados foram {valores_pares_como_string}.')
+# print(f'Os valores pares digitados foram {valores_pares_como_string}.')
+
+# 77
+# vogais = ('a', 'e', 'i', 'o', 'u')
+# palavras = ('aprender', 'programar', 'linguagem', 'python')
+
+# for a in palavras:
+    # print(vogais)
+
+#print('-=' * 15)
