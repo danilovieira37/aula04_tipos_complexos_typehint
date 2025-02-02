@@ -42,58 +42,38 @@
 # print('Adicionado ao final da lista...')
 # for v in range(0,4):
 #     valor: int = int(input(f'Digite um valor: '))
-#     if valor < lista[0]:
-#         lista.insert(lista.index(lista[v]), valor)
-#         print(f'Adicionado na posição {lista.index(valor)} da lista...')
-#     else: 
-#         for n in lista:
-#             if valor < n:
-#                 lista.insert(lista.index(lista[v]), valor)
-#                 print(f'Adicionado na posição {lista.index(valor)} da lista...')
-#                 break    
-#         if not valor in lista:
-#             lista.insert(max(lista), valor)    
+#     for n in lista:
+#         if valor < n:
+#             lista.insert(lista.index(n), valor)
 #             print(f'Adicionado na posição {lista.index(valor)} da lista...')
-# Não resolvido
+#             break
+#     if valor > max(lista):
+#         lista.insert(max(lista), valor)
+#         print(f'Adicionado na posição {lista.index(valor)} da lista...')
+# print('-=' * 30)
+# print(f'Os valores digitados em ordem foram {lista}')
 
-# 80 correção
-
+# 81
 lista: list = []
-valor: int = int(input(f'Digite um valor: '))
-lista.append(valor)
-print('Adicionado ao final da lista...')
-for v in range(0,4):
-    valor: int = int(input(f'Digite um valor: '))
-    for n in lista:
-        if valor < n:
-            lista.insert(lista.index(n), valor)
-            print(f'Adicionado na posição {lista.index(valor)} da lista...')
+continuar: str = 's'
+while continuar.lower() == 's':
+    while True: 
+        try: 
+            v: int = int(input(f'Digite um valor: '))
             break
-    if valor > max(lista):
-        lista.insert(max(lista), valor)
-        print(f'Adicionado na posição {lista.index(valor)} da lista...')
-print('-=' * 40)
-print(f'Os valores digitados em ordem foram {lista}')
-
-
-
-
-
-    
-    # if v == 0:
-    #     valor_0: int = int(input(f'Digite um valor: '))
-    #     lista.append(valor_0)
-    #     print('Adicionado ao final da lista...')
-    # else:
-    #     for n in lista:
-    #         valor: int = int(input(f'Digite um valor: '))
-    #         if valor < n:
-    #             lista.insert(lista.index(n), valor)
-    #             print(f'Adicionado na posição {lista.index(valor)} da lista...')
-    #         elif :
-    #             lista.insert(lista.index(n) + 1, valor)
-    #             print(f'Adicionado na posição {lista.index(valor)} da lista...')
-    #         else:
-
-
-    
+        except ValueError:
+            print('Você não digitou um valor, por favor digite um valor: ')
+    lista.append(v)
+    print('Valor adicionado com sucesso...')    
+    continuar: str = input('Quer Continuar: [S/N]: ').strip()
+    while continuar not in ['S', 's', 'N', 'n']:
+        print('Opção inválida. Por favor, digite "S" para sim ou "N" para não.')
+        continuar: str = input('Quer Continuar: [S/N]: ').strip()
+print('-=' * 30)
+print(f'Você digitou {len(lista)} elementos.')
+lista.sort(reverse=True)
+print(f'Os valores em ordem decrescente são {lista}')
+if 5 in lista:
+    print('O valor 5 faz parte da lista!')
+else:
+    print('O valor 5 não foi encontrado na lista!')
