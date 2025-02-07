@@ -79,29 +79,55 @@
 #     print('O valor 5 não foi encontrado na lista!')
 
 # 82
-lista: list = []
-continuar: str = 's'
-while continuar.lower() == 's':
-    while True: 
-        try: 
-            v: int = int(input(f'Digite um número: '))
-            break
-        except ValueError:
-            print('Você não digitou um valor, por favor digite um valor: ')
-    lista.append(v)
-    print('Valor adicionado com sucesso...')    
-    continuar: str = input('Quer Continuar: [S/N]: ').strip()
-    while continuar not in ['S', 's', 'N', 'n']:
-        print('Opção inválida. Por favor, digite "S" para sim ou "N" para não.')
-        continuar: str = input('Quer Continuar: [S/N]: ').strip()
-print('-=' * 30)
-print(f'A lista completa é {lista}')
-lista_pares: list = []
-lista_impar: list = []
-for n in lista:
-    if n % 2 == 0:
-        lista_pares.append(n)
-    else:
-        lista_impar.append(n)
-print(f'A lista de pares é {lista_pares}')
-print(f'A lista de ímpares é {lista_impar}')
+# lista: list = []
+# continuar: str = 's'
+# while continuar.lower() == 's':
+#     while True: 
+#         try: 
+#             v: int = int(input(f'Digite um número: '))
+#             break
+#         except ValueError:
+#             print('Você não digitou um valor, por favor digite um valor: ')
+#     lista.append(v)
+#     print('Valor adicionado com sucesso...')    
+#     continuar: str = input('Quer Continuar: [S/N]: ').strip()
+#     while continuar not in ['S', 's', 'N', 'n']:
+#         print('Opção inválida. Por favor, digite "S" para sim ou "N" para não.')
+#         continuar: str = input('Quer Continuar: [S/N]: ').strip()
+# print('-=' * 30)
+# print(f'A lista completa é {lista}')
+# lista_pares: list = []
+# lista_impar: list = []
+# for n in lista:
+#     if n % 2 == 0:
+#         lista_pares.append(n)
+#     else:
+#         lista_impar.append(n)
+# print(f'A lista de pares é {lista_pares}')
+# print(f'A lista de ímpares é {lista_impar}')
+
+# 83
+e: str = input(f'Digite a expressão: ')
+qtde_caracteres: int = int(len(e))
+lista_abre: list = []
+lista_fecha: list = []
+for c in range (0, qtde_caracteres):
+    if e[c] in ('(', '{', '['):
+        lista_abre.append(e[c])
+    elif e[c] in (')', '}', ']'):
+        lista_fecha.append(e[c])
+if len(lista_abre) == len(lista_fecha):
+    print('Sua expressão está correta!')
+else:
+    print('Sua expressão está errada!')
+
+
+# lista: list = []
+# lista.append(e)
+# for n in lista:
+
+
+
+
+
+# ((a+b)*(a*c)-2
