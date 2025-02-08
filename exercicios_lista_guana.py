@@ -14,30 +14,30 @@
 #         print(f'{p}...', end=' ')
 
 # correção 78:
-listanum = []
-maior: int = int(0)
-menor: int = int(0)
-for c in range(0, 5):
-    listanum.append(int(input(f'Digite um valor para a posição {c}: ')))
-    if c == 0:
-        maior = menor = listanum[c]
-    else:
-        if listanum[c] > maior:
-            maior = listanum[c]
-        if listanum[c] < menor:
-            menor = listanum[c]
-print('=-' * 30)
-print(f'Você digitou os valores {listanum}')
-print(f'O maior valor digitado foi {maior} nas posições ', end='')
-for i, v in enumerate(listanum):
-    if listanum[i] == maior:
-        print(f'{i}...', end='')
-print()
-print(f'O maior valor digitado foi {menor} nas posições ', end='')
-for i, v in enumerate(listanum):
-    if listanum[i] == menor:
-        print(f'{i}...', end='')
-print()
+# listanum = []
+# maior: int = int(0)
+# menor: int = int(0)
+# for c in range(0, 5):
+#     listanum.append(int(input(f'Digite um valor para a posição {c}: ')))
+#     if c == 0:
+#         maior = menor = listanum[c]
+#     else:
+#         if listanum[c] > maior:
+#             maior = listanum[c]
+#         if listanum[c] < menor:
+#             menor = listanum[c]
+# print('=-' * 30)
+# print(f'Você digitou os valores {listanum}')
+# print(f'O maior valor digitado foi {maior} nas posições ', end='')
+# for i, v in enumerate(listanum):
+#     if listanum[i] == maior:
+#         print(f'{i}...', end='')
+# print()
+# print(f'O maior valor digitado foi {menor} nas posições ', end='')
+# for i, v in enumerate(listanum):
+#     if listanum[i] == menor:
+#         print(f'{i}...', end='')
+# print()
 
 
 
@@ -150,45 +150,70 @@ print()
 #     print('Sua expressão está errada!')
 
 # 84
-# nome_peso: list = []
-# lista_completa: list = []
-# continuar: str = 's'
-# while continuar.lower() == 's':
-#     while True:
-#         try:
-#             nome: str = input('Nome: ')
-#             nome_peso.append(nome)    
-#             peso: float = float(input('Peso: '))
-#             nome_peso.append(peso)
-#             lista_completa.append(nome_peso[:])
-#             nome_peso.clear()
-#             break
-#         except ValueError:
-#             print('Você não digitou nenhum nome ou peso, ou digitou uma letra no campo peso, por favor tente novamente.')
-#     continuar: str = input('Quer continuar: [S/N]: ').strip()
-#     while continuar not in ['S', 's', 'N', 'n']:
-#         print('Opção inválida. Por favor, digite "S" para Sim ou "N" para não.')
-#         continuar: str = input('Quer continuar: [S/N]: ').strip()
-# print('-=' * 30)
-# print(f'Ao todo, você cadastrou {len(lista_completa[0])} pessoas.')
+nome_peso: list = []
+lista_completa: list = []
+continuar: str = 's'
+maior_peso: float = float(0)
+menor_peso: float = float(0)
+while continuar.lower() == 's':
+    while True:
+        try:
+            nome: str = input('Nome: ')
+            nome_peso.append(nome)    
+            peso: float = float(input('Peso: '))
+            nome_peso.append(peso)
+            lista_completa.append(nome_peso[:])
+            nome_peso.clear()
+            break
+        except ValueError:
+            print('Você não digitou nenhum nome ou peso, ou digitou uma letra no campo peso, por favor tente novamente.')
+    continuar: str = input('Quer continuar: [S/N]: ').strip()
+    while continuar not in ['S', 's', 'N', 'n']:
+        print('Opção inválida. Por favor, digite "S" para Sim ou "N" para não.')
+        continuar: str = input('Quer continuar: [S/N]: ').strip()
+## lista_completa = [['Maria', 70], ['João', 100], ['Claudio', 100]]
+for p, v in enumerate(lista_completa):    
+    if p == 0:
+        maior_peso = menor_peso = lista_completa[0][1]
+    else:
+        if v[1] > maior_peso:
+            maior_peso: float = float(v[1])
+        if v[1] < menor_peso:
+            menor_peso: float = float(v[1])        
+print('-=' * 30)
+print(f'Ao todo, você cadastrou {len(lista_completa[0])} pessoas.')
+print(f'O maior peso foi de {maior_peso}Kg. Peso de ', end='')
+for p, v in enumerate(lista_completa):    
+    if v[1] == maior_peso:
+        print(f'{v[0]}', end='... ')
+print()
+print(f'O menor peso foi de {menor_peso}Kg. Peso de ', end='')
+for p, v in enumerate(lista_completa):
+    if v[1] == menor_peso:
+        print(f'{v[0]}', end='... ')
+        
 
-
-# lista_completa = [['Maria', 70], ['João', 100]]
-# maior_peso: float = lista_completa[0][1]
-# for p, v in enumerate(lista_completa):    
-#     if v[1] > maior_peso:
-#         maior_peso: float = v[1]
-# print(f'O maior peso foi de {maior_peso}.', end=' ')
-# for p, v in enumerate(lista_completa):    
-#     if v[1] > maior_peso:
-#         maior_peso: float = v[1]
-
-
-# print(f'O maior peso foi de {menor_peso}.') 
-# for p, v in enumerate(lista):
-#     if v == max(lista):
-#         print(f'{p}...', end=' ')
-# print(f'\nO menor valor digitado foi {min(lista)} nas posições', end=' ')
-# for p, v in enumerate(lista):
-#     if v == min(lista):
-#         print(f'{p}...', end=' ')
+# listanum = []
+# maior: int = int(0)
+# menor: int = int(0)
+# for c in range(0, 5):
+#     listanum.append(int(input(f'Digite um valor para a posição {c}: ')))
+#     if c == 0:
+#         maior = menor = listanum[c]
+#     else:
+#         if listanum[c] > maior:
+#             maior = listanum[c]
+#         if listanum[c] < menor:
+#             menor = listanum[c]
+# print('=-' * 30)
+# print(f'Você digitou os valores {listanum}')
+# print(f'O maior valor digitado foi {maior} nas posições ', end='')
+# for i, v in enumerate(listanum):
+#     if listanum[i] == maior:
+#         print(f'{i}...', end='')
+# print()
+# print(f'O maior valor digitado foi {menor} nas posições ', end='')
+# for i, v in enumerate(listanum):
+#     if listanum[i] == menor:
+#         print(f'{i}...', end='')
+# print()
