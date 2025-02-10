@@ -225,19 +225,31 @@
 #         print(f'[{p[0]}]', end=' ')
 
 # 85
-lista_principal: list = [[], []]
-lista_par: list = lista_principal[0]
-lista_impar: list = lista_principal[1]
-for p in range(0, 7):
-    v: int = int(input(f'Digite o {p+1}o valor: '))
-    if v % 2 == 0:
-        lista_par.append(v)
-    else:
-        lista_impar.append(v)
-lista_impar.sort()
-lista_par.sort()
-print(f'Os valores pares digitados foram: {lista_principal[0]}')
-print(f'Os valores ímpares digitados foram: {lista_principal[1]}')
+# lista_principal: list = [[], []]
+# lista_par: list = lista_principal[0]
+# lista_impar: list = lista_principal[1]
+# for p in range(0, 7):
+#     v: int = int(input(f'Digite o {p+1}o valor: '))
+#     if v % 2 == 0:
+#         lista_par.append(v)
+#     else:
+#         lista_impar.append(v)
+# lista_impar.sort()
+# lista_par.sort()
+# print(f'Os valores pares digitados foram: {lista_principal[0]}')
+# print(f'Os valores ímpares digitados foram: {lista_principal[1]}')
 
 # correcao 85
-
+num: list = [[], []]
+valor: int = 0
+for c in range (1, 8):
+    valor: int = int(input(f'Digite o {c}o. valor: '))
+    if valor % 2 == 0:
+        num[0].append(valor)
+    else:
+        num[1].append(valor)
+print('-=' * 30)
+num[0].sort()
+num[1].sort()
+print(f'Os valores pares digitados foram: {num[0]}')
+print(f'Os valores ímpares digitados foram: {num[0]}')
