@@ -240,16 +240,28 @@
 # print(f'Os valores ímpares digitados foram: {lista_principal[1]}')
 
 # correcao 85
-num: list = [[], []]
-valor: int = 0
-for c in range (1, 8):
-    valor: int = int(input(f'Digite o {c}o. valor: '))
-    if valor % 2 == 0:
-        num[0].append(valor)
-    else:
-        num[1].append(valor)
+# num: list = [[], []]
+# valor: int = 0
+# for c in range (1, 8):
+#     valor: int = int(input(f'Digite o {c}o. valor: '))
+#     if valor % 2 == 0:
+#         num[0].append(valor)
+#     else:
+#         num[1].append(valor)
+# print('-=' * 30)
+# num[0].sort()
+# num[1].sort()
+# print(f'Os valores pares digitados foram: {num[0]}')
+# print(f'Os valores ímpares digitados foram: {num[0]}')
+
+# 86 não consegui fazer
+# 86 correcao
+matriz: list = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+for l in range (0, 3):
+    for c in range(0,3):
+        matriz[l][c] = int(input(f'Digite um valor para [{l}, {c}]: '))
 print('-=' * 30)
-num[0].sort()
-num[1].sort()
-print(f'Os valores pares digitados foram: {num[0]}')
-print(f'Os valores ímpares digitados foram: {num[0]}')
+for l in range(0, 3):
+    for c in range(0, 3):
+        print(f'[{matriz[l][c]:^5}]', end='')
+    print()
