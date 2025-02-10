@@ -193,33 +193,51 @@
 #         print(f'{v[0]}', end='... ')
         
 # Correção 84
-temp: list = []
-princ: list = []
-mai = men = 0
+# temp: list = []
+# princ: list = []
+# mai = men = 0
 
-while True:
-    temp.append(str(input('Nome: ')))
-    temp.append(float(input('Peso: ')))
-    if len(princ) == 0:
-        mai = men = temp[1]
+# while True:
+#     temp.append(str(input('Nome: ')))
+#     temp.append(float(input('Peso: ')))
+#     if len(princ) == 0:
+#         mai = men = temp[1]
+#     else:
+#         if temp[1] > mai:
+#             mai = temp[1]
+#         if temp[1] < men:
+#             men = temp[1]
+#     princ.append(temp[:])
+#     temp.clear()
+#     resp: str = str(input('Quer continuar? [S/N] '))
+#     if resp in 'Nn':
+#         break
+# print('-=' * 30)
+# print(f'Ao todo, você cadastrou {len(princ)} pessoas. ')
+# print(f'O maior peso foi de {mai}Kg. Peso de ', end='')
+# for p in princ:
+#     if p[1] == mai:
+#         print(f'[{p[0]}]', end=' ')
+# print()
+# print(f'O menor peso foi de {men}Kg. Peso de ', end='')
+# for p in princ:
+#     if p[1] == men:
+#         print(f'[{p[0]}]', end=' ')
+
+# 85
+lista_principal: list = [[], []]
+lista_par: list = lista_principal[0]
+lista_impar: list = lista_principal[1]
+for p in range(0, 7):
+    v: int = int(input(f'Digite o {p+1}o valor: '))
+    if v % 2 == 0:
+        lista_par.append(v)
     else:
-        if temp[1] > mai:
-            mai = temp[1]
-        if temp[1] < men:
-            men = temp[1]
-    princ.append(temp[:])
-    temp.clear()
-    resp: str = str(input('Quer continuar? [S/N] '))
-    if resp in 'Nn':
-        break
-print('-=' * 30)
-print(f'Ao todo, você cadastrou {len(princ)} pessoas. ')
-print(f'O maior peso foi de {mai}Kg. Peso de ', end='')
-for p in princ:
-    if p[1] == mai:
-        print(f'[{p[0]}]', end=' ')
-print()
-print(f'O menor peso foi de {men}Kg. Peso de ', end='')
-for p in princ:
-    if p[1] == men:
-        print(f'[{p[0]}]', end=' ')
+        lista_impar.append(v)
+lista_impar.sort()
+lista_par.sort()
+print(f'Os valores pares digitados foram: {lista_principal[0]}')
+print(f'Os valores ímpares digitados foram: {lista_principal[1]}')
+
+# correcao 85
+
