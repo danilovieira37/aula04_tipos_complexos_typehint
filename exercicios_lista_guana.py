@@ -315,6 +315,7 @@
 # 88
 import random
 import time
+lista_sorteada: list = []
 print('-' * 30)
 print(f'{'JOGO NA MEGA SENA' :^30}')
 print('-' * 30)
@@ -323,6 +324,9 @@ print(f'{'SORTEANDO 'f'{qtde_jogos} JOGOS' :^30}')
 for j in range(0, qtde_jogos):
         lista: list = list(range(0, 61))
         random.shuffle(lista)
-        print(f'Jogo {j + 1}: {lista[:6]}')
-        time.sleep(2)
+        lista_sorteada.append(lista[:6])
+        lista_sorteada[0].sort()
+        print(f'Jogo {j + 1}: {lista_sorteada[0]}')
+        lista_sorteada.clear()
+        time.sleep(1)
 print(f'{'Boa sorte' :^30}')
