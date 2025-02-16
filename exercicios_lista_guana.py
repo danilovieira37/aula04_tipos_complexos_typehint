@@ -313,20 +313,49 @@
 # print(f'A soma dos valores da terceira coluna é {mai}.')
 
 # 88
-import random
-import time
-lista_sorteada: list = []
+# import random
+# import time
+# lista_sorteada: list = []
+# print('-' * 30)
+# print(f'{'JOGO NA MEGA SENA' :^30}')
+# print('-' * 30)
+# qtde_jogos: int = int(input('Quantos jogos você quer que eu sorteie? '))
+# print(f'{'SORTEANDO 'f'{qtde_jogos} JOGOS' :^30}')
+# for j in range(0, qtde_jogos):
+#         lista: list = list(range(0, 61))
+#         random.shuffle(lista)
+#         lista_sorteada.append(lista[:6])
+#         lista_sorteada[0].sort()
+#         print(f'Jogo {j + 1}: {lista_sorteada[0]}')
+#         lista_sorteada.clear()
+#         time.sleep(1)
+# print(f'{'Boa sorte' :^30}')
+
+# correcao 88
+from random import randint
+from time import sleep
+lista = list()
+jogos = list()
 print('-' * 30)
 print(f'{'JOGO NA MEGA SENA' :^30}')
 print('-' * 30)
-qtde_jogos: int = int(input('Quantos jogos você quer que eu sorteie? '))
-print(f'{'SORTEANDO 'f'{qtde_jogos} JOGOS' :^30}')
-for j in range(0, qtde_jogos):
-        lista: list = list(range(0, 61))
-        random.shuffle(lista)
-        lista_sorteada.append(lista[:6])
-        lista_sorteada[0].sort()
-        print(f'Jogo {j + 1}: {lista_sorteada[0]}')
-        lista_sorteada.clear()
-        time.sleep(1)
-print(f'{'Boa sorte' :^30}')
+quant = int(input('Quantos jogos você quer que eu sorteie? '))
+tot = 1
+while tot <= quant:
+        cont = 0
+        while True:
+                num = randint(1,60)
+                if num not in lista:
+                        lista.append(num)
+                        cont += 1
+                if cont >= 6:
+                        break
+        lista.sort()
+        jogos.append(lista[:])
+        lista.clear()
+        tot += 1
+print('-=' * 3, f' SORTEANDO {quant} JOGOS ', '-=' * 3)
+for i, l in enumerate(jogos):
+        print(f'Jogo {i+1}: {l}')
+        sleep(1)
+print('-=' * 5, '< BOA SORTE! >', '-=' * 5)
