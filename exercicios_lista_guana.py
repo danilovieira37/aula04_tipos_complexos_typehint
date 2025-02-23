@@ -332,30 +332,74 @@
 # print(f'{'Boa sorte' :^30}')
 
 # correcao 88
-from random import randint
-from time import sleep
-lista = list()
-jogos = list()
-print('-' * 30)
-print(f'{'JOGO NA MEGA SENA' :^30}')
-print('-' * 30)
-quant = int(input('Quantos jogos você quer que eu sorteie? '))
-tot = 1
-while tot <= quant:
-        cont = 0
-        while True:
-                num = randint(1,60)
-                if num not in lista:
-                        lista.append(num)
-                        cont += 1
-                if cont >= 6:
-                        break
-        lista.sort()
-        jogos.append(lista[:])
-        lista.clear()
-        tot += 1
-print('-=' * 3, f' SORTEANDO {quant} JOGOS ', '-=' * 3)
-for i, l in enumerate(jogos):
-        print(f'Jogo {i+1}: {l}')
-        sleep(1)
-print('-=' * 5, '< BOA SORTE! >', '-=' * 5)
+# from random import randint
+# from time import sleep
+# lista = list()
+# jogos = list()
+# print('-' * 30)
+# print(f'{'JOGO NA MEGA SENA' :^30}')
+# print('-' * 30)
+# quant = int(input('Quantos jogos você quer que eu sorteie? '))
+# tot = 1
+# while tot <= quant:
+#         cont = 0
+#         while True:
+#                 num = randint(1,60)
+#                 if num not in lista:
+#                         lista.append(num)
+#                         cont += 1
+#                 if cont >= 6:
+#                         break
+#         lista.sort()
+#         jogos.append(lista[:])
+#         lista.clear()
+#         tot += 1
+# print('-=' * 3, f' SORTEANDO {quant} JOGOS ', '-=' * 3)
+# for i, l in enumerate(jogos):
+#         print(f'Jogo {i+1}: {l}')
+#         sleep(1)
+# print('-=' * 5, '< BOA SORTE! >', '-=' * 5)
+
+# 89
+lista: list = []
+aluno: list = []
+notas: list = []
+continuar: str = 's'
+selecao_notas: int = 0
+while continuar.lower() == 's':
+    while True:
+        try:
+            nome: str = input('Nome: ')
+            aluno.append(nome)
+            notas_1: float = float(input('Nota 1: '))
+            notas.append(notas_1)
+            notas_2: float = float(input('Nota 2: '))
+            notas.append(notas_2)
+            media_notas: float = (notas_1 + notas_2) / 2
+            notas.append(media_notas)
+            aluno.append(notas[:])
+            lista.append(aluno[:])
+            aluno.clear()
+            notas.clear()
+            break
+        except ValueError:
+            print('Você não digitou nenhum nome ou peso, ou digitou uma letra no campo peso, por favor tente novamente.')
+    continuar: str = input('Quer continuar: [S/N]: ').strip()
+    while continuar not in ['S', 's', 'N', 'n']:
+        print('Opção inválida. Por favor, digite "S" para Sim ou "N" para não.')
+        continuar: str = input('Quer continuar: [S/N]: ').strip()
+print('-=' * 30)
+print('No.' + f'{'Nome' :^15}' + f'{'Média' :>15}')
+print('-' * 40)
+for p, n in enumerate(lista):
+    print(f'{p}' + f'{n[0] :^15}' + f'{n[1][2] :>15}')
+print('-' * 40)
+while not selecao_notas == 999:
+    selecao_notas: int = int(input('Mostrar notas de qual aluno? (Digite o No. dele ou 999 para interromper): '))
+    if selecao_notas == 999:
+        break    
+    else:
+        print(f'Notas de {lista[selecao_notas][0]} são {lista[selecao_notas][1][:2]}')
+print('FINALIZANDO...')
+print('<' * 3 + ' VOLTE SEMPRE ' + '>' * 3)
+
