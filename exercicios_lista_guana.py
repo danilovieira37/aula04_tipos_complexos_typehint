@@ -361,45 +361,70 @@
 # print('-=' * 5, '< BOA SORTE! >', '-=' * 5)
 
 # 89
-lista: list = []
-aluno: list = []
-notas: list = []
-continuar: str = 's'
-selecao_notas: int = 0
-while continuar.lower() == 's':
-    while True:
-        try:
-            nome: str = input('Nome: ')
-            aluno.append(nome)
-            notas_1: float = float(input('Nota 1: '))
-            notas.append(notas_1)
-            notas_2: float = float(input('Nota 2: '))
-            notas.append(notas_2)
-            media_notas: float = (notas_1 + notas_2) / 2
-            notas.append(media_notas)
-            aluno.append(notas[:])
-            lista.append(aluno[:])
-            aluno.clear()
-            notas.clear()
-            break
-        except ValueError:
-            print('Você não digitou nenhum nome ou peso, ou digitou uma letra no campo peso, por favor tente novamente.')
-    continuar: str = input('Quer continuar: [S/N]: ').strip()
-    while continuar not in ['S', 's', 'N', 'n']:
-        print('Opção inválida. Por favor, digite "S" para Sim ou "N" para não.')
-        continuar: str = input('Quer continuar: [S/N]: ').strip()
-print('-=' * 30)
-print('No.' + f'{'Nome' :^15}' + f'{'Média' :>15}')
-print('-' * 40)
-for p, n in enumerate(lista):
-    print(f'{p}' + f'{n[0] :^15}' + f'{n[1][2] :>15}')
-print('-' * 40)
-while not selecao_notas == 999:
-    selecao_notas: int = int(input('Mostrar notas de qual aluno? (Digite o No. dele ou 999 para interromper): '))
-    if selecao_notas == 999:
-        break    
-    else:
-        print(f'Notas de {lista[selecao_notas][0]} são {lista[selecao_notas][1][:2]}')
-print('FINALIZANDO...')
-print('<' * 3 + ' VOLTE SEMPRE ' + '>' * 3)
+# lista: list = []
+# aluno: list = []
+# notas: list = []
+# continuar: str = 's'
+# selecao_notas: int = 0
+# while continuar.lower() == 's':
+#     while True:
+#         try:
+#             nome: str = input('Nome: ')
+#             aluno.append(nome)
+#             notas_1: float = float(input('Nota 1: '))
+#             notas.append(notas_1)
+#             notas_2: float = float(input('Nota 2: '))
+#             notas.append(notas_2)
+#             media_notas: float = (notas_1 + notas_2) / 2
+#             notas.append(media_notas)
+#             aluno.append(notas[:])
+#             lista.append(aluno[:])
+#             aluno.clear()
+#             notas.clear()
+#             break
+#         except ValueError:
+#             print('Você não digitou nenhum nome ou peso, ou digitou uma letra no campo peso, por favor tente novamente.')
+#     continuar: str = input('Quer continuar: [S/N]: ').strip()
+#     while continuar not in ['S', 's', 'N', 'n']:
+#         print('Opção inválida. Por favor, digite "S" para Sim ou "N" para não.')
+#         continuar: str = input('Quer continuar: [S/N]: ').strip()
+# print('-=' * 30)
+# print('No.' + f'{'Nome' :^15}' + f'{'Média' :>15}')
+# print('-' * 40)
+# for p, n in enumerate(lista):
+#     print(f'{p}' + f'{n[0] :^15}' + f'{n[1][2] :>15}')
+# print('-' * 40)
+# while not selecao_notas == 999:
+#     selecao_notas: int = int(input('Mostrar notas de qual aluno? (Digite o No. dele ou 999 para interromper): '))
+#     if selecao_notas == 999:
+#         break    
+#     else:
+#         print(f'Notas de {lista[selecao_notas][0]} são {lista[selecao_notas][1][:2]}')
+# print('FINALIZANDO...')
+# print('<' * 3 + ' VOLTE SEMPRE ' + '>' * 3)
 
+# correcao 89
+ficha: list = list()
+while True:
+    nome: str = str(input('Nome: '))
+    nota1: float = float(input('Nota 1: '))
+    nota2: float = float(input('Nota 2: '))
+    media = (nota1 + nota2) / 2
+    ficha.append( [nome, [nota1, nota2], media])
+    resp: str = str(input('Quer continuar? [S/N] '))
+    if resp in 'Nn':
+        break
+print('-=' * 30)
+print(f'{"No.":<4}{"NOME":<10}{"MÉDIA":>8}')
+print('-' * 26)
+for i, a in enumerate(ficha):
+    print(f'{i:<4}{a[0]:<10}{a[2]:>8.1f}')
+while True:
+    print('-' * 35)
+    opc: int = int(input('Mostrar notas de qual aluno? (999 interrompe): '))
+    if opc == 999:
+        print('FINALIZANDO...')
+        break
+    if opc <= len(ficha) - 1:
+        print(f'Notas de {ficha[opc][0]} são {ficha[opc][1]}')
+print('<<< VOLTE SEMPRE >>>')
