@@ -29,21 +29,37 @@
 #         sleep(1)
 
 # correcao ex 91
-from random import randint
-from time import sleep
-from operator import itemgetter
-jogo = {'jogador1': randint(1, 6),
-        'jogador2': randint(1, 6),
-        'jogador3': randint(1, 6),
-        'jogador4': randint(1, 6)}
-ranking: list = list()
-print('Valores sorteados:')
-for k, v in jogo.items():
-        print(f'{k} tirou {v} no dado.')
-        sleep(1)
-ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+# from random import randint
+# from time import sleep
+# from operator import itemgetter
+# jogo = {'jogador1': randint(1, 6),
+#         'jogador2': randint(1, 6),
+#         'jogador3': randint(1, 6),
+#         'jogador4': randint(1, 6)}
+# ranking: list = list()
+# print('Valores sorteados:')
+# for k, v in jogo.items():
+#         print(f'{k} tirou {v} no dado.')
+#         sleep(1)
+# ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+# print('-=' * 30)
+# print(' == RANKING DOS JOGADORES ==')
+# for i, v in enumerate(ranking):
+#         print(f'  {i+1}° lugar: {v[0]} com {v[1]}.')
+#         sleep(1)
+
+# ex 92
+import datetime
+
+ficha_trabalho: dict = {}
+ficha_trabalho['nome']: str = str(input('Nome: '))
+ano_nascimento: int = int(input('Ano de Nascimento: '))
+ficha_trabalho['idade']: int = datetime.datetime.now().year - ano_nascimento
+ficha_trabalho['ctps']: str = str(input('Número da Carteira de Trabalho (Digite 0 quando não tiver): '))
+if not ficha_trabalho['ctps'] == '0':
+    ficha_trabalho['contratacao']: int = int(input('Ano de contratação: '))
+    ficha_trabalho['salario']: float = float(input('Salário: R$ '))
+    ficha_trabalho['aposentadoria']: int = datetime.datetime.now().year - ficha_trabalho['contratacao']
 print('-=' * 30)
-print(' == RANKING DOS JOGADORES ==')
-for i, v in enumerate(ranking):
-        print(f'  {i+1}° lugar: {v[0]} com {v[1]}.')
-        sleep(1)
+for k, v in ficha_trabalho.items():
+    print(f'{k} tem o valor {v}')
