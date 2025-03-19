@@ -65,16 +65,35 @@
 #     print(f'{k} tem o valor {v}')
 
 # correcao ex 92
-from datetime import datetime
-dados = dict()
-dados['nome'] = str(input('Nome: '))
-nasc = int(input('Ano de Nascimento: '))
-dados['idade'] = datetime.now().year - nasc
-dados['ctps'] = int(input('Carteira de Trabalho (0 não tem): '))
-if dados['ctps'] != 0:
-    dados['contratacao'] = int(input('Ano de Contratação: '))
-    dados['salario'] = float(input('Salário: R$' ))
-    dados['aposentadoria'] = dados['idade'] + ((dados['contratacao'] + 35) - datetime.now().year)
-print('-=' * 30)
+# from datetime import datetime
+# dados = dict()
+# dados['nome'] = str(input('Nome: '))
+# nasc = int(input('Ano de Nascimento: '))
+# dados['idade'] = datetime.now().year - nasc
+# dados['ctps'] = int(input('Carteira de Trabalho (0 não tem): '))
+# if dados['ctps'] != 0:
+#     dados['contratacao'] = int(input('Ano de Contratação: '))
+#     dados['salario'] = float(input('Salário: R$' ))
+#     dados['aposentadoria'] = dados['idade'] + ((dados['contratacao'] + 35) - datetime.now().year)
+# print('-=' * 30)
+# for k, v in dados.items():
+#     print(f'  - {k} tem o valor {v}')
+
+# ex 93
+dados: dict = {}
+gols: list = []
+dados['nome']: str = str(input('Nome do Jogador: '))
+partidas: int = int(input(f'Quantas partidas {dados['nome']} jogou: '))
+for g in range(0, partidas):
+    gols.append(int(input(f'Quantos gols na partida {g + 1}?')))
+dados['gols']: list = gols
+dados['total']: int = sum(gols)
+print('-=' * 30)   
+print(dados)
 for k, v in dados.items():
-    print(f'  - {k} tem o valor {v}')
+    print(f'O campo {k} tem o valor {v}.')
+print('-='*30)
+print(f'O jogador {dados["nome"]} jogou {partidas} partidas.')
+for p, v in enumerate(gols):
+     print(f'   => Na partida {p + 1}, fez {v} gols.')
+print(f'Foi um total de {dados["total"]} gols.')
