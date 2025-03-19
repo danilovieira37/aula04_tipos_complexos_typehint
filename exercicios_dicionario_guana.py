@@ -49,17 +49,32 @@
 #         sleep(1)
 
 # ex 92
-import datetime
+# import datetime
 
-ficha_trabalho: dict = {}
-ficha_trabalho['nome']: str = str(input('Nome: '))
-ano_nascimento: int = int(input('Ano de Nascimento: '))
-ficha_trabalho['idade']: int = datetime.datetime.now().year - ano_nascimento
-ficha_trabalho['ctps']: str = str(input('Número da Carteira de Trabalho (Digite 0 quando não tiver): '))
-if not ficha_trabalho['ctps'] == '0':
-    ficha_trabalho['contratacao']: int = int(input('Ano de contratação: '))
-    ficha_trabalho['salario']: float = float(input('Salário: R$ '))
-    ficha_trabalho['aposentadoria']: int = datetime.datetime.now().year - ficha_trabalho['contratacao']
+# ficha_trabalho: dict = {}
+# ficha_trabalho['nome']: str = str(input('Nome: '))
+# ano_nascimento: int = int(input('Ano de Nascimento: '))
+# ficha_trabalho['idade']: int = datetime.datetime.now().year - ano_nascimento
+# ficha_trabalho['ctps']: str = str(input('Número da Carteira de Trabalho (Digite 0 quando não tiver): '))
+# if not ficha_trabalho['ctps'] == '0':
+#     ficha_trabalho['contratacao']: int = int(input('Ano de contratação: '))
+#     ficha_trabalho['salario']: float = float(input('Salário: R$ '))
+#     ficha_trabalho['aposentadoria']: int = datetime.datetime.now().year - ficha_trabalho['contratacao']
+# print('-=' * 30)
+# for k, v in ficha_trabalho.items():
+#     print(f'{k} tem o valor {v}')
+
+# correcao ex 92
+from datetime import datetime
+dados = dict()
+dados['nome'] = str(input('Nome: '))
+nasc = int(input('Ano de Nascimento: '))
+dados['idade'] = datetime.now().year - nasc
+dados['ctps'] = int(input('Carteira de Trabalho (0 não tem): '))
+if dados['ctps'] != 0:
+    dados['contratacao'] = int(input('Ano de Contratação: '))
+    dados['salario'] = float(input('Salário: R$' ))
+    dados['aposentadoria'] = dados['idade'] + ((dados['contratacao'] + 35) - datetime.now().year)
 print('-=' * 30)
-for k, v in ficha_trabalho.items():
-    print(f'{k} tem o valor {v}')
+for k, v in dados.items():
+    print(f'  - {k} tem o valor {v}')
