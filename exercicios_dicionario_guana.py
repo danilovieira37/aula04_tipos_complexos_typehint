@@ -80,20 +80,40 @@
 #     print(f'  - {k} tem o valor {v}')
 
 # ex 93
-dados: dict = {}
-gols: list = []
-dados['nome']: str = str(input('Nome do Jogador: '))
-partidas: int = int(input(f'Quantas partidas {dados['nome']} jogou: '))
-for g in range(0, partidas):
-    gols.append(int(input(f'Quantos gols na partida {g + 1}?')))
-dados['gols']: list = gols
-dados['total']: int = sum(gols)
-print('-=' * 30)   
-print(dados)
-for k, v in dados.items():
-    print(f'O campo {k} tem o valor {v}.')
-print('-='*30)
-print(f'O jogador {dados["nome"]} jogou {partidas} partidas.')
-for p, v in enumerate(gols):
-     print(f'   => Na partida {p + 1}, fez {v} gols.')
-print(f'Foi um total de {dados["total"]} gols.')
+# dados: dict = {}
+# gols: list = []
+# dados['nome']: str = str(input('Nome do Jogador: '))
+# partidas: int = int(input(f'Quantas partidas {dados['nome']} jogou: '))
+# for g in range(0, partidas):
+#     gols.append(int(input(f'Quantos gols na partida {g + 1}?')))
+# dados['gols']: list = gols
+# dados['total']: int = sum(gols)
+# print('-=' * 30)   
+# print(dados)
+# for k, v in dados.items():
+#     print(f'O campo {k} tem o valor {v}.')
+# print('-='*30)
+# print(f'O jogador {dados["nome"]} jogou {partidas} partidas.')
+# for p, v in enumerate(gols):
+#      print(f'   => Na partida {p + 1}, fez {v} gols.')
+# print(f'Foi um total de {dados["total"]} gols.')
+
+# correcao ex 93
+jogador = dict()
+partidas = list()
+jogador['nome'] = str(input('Nome do jogador: '))
+tot = int(input(f'Quantas partidas {jogador["nome"]} jogou?'))
+for c in range(0, tot):
+    partidas.append(int(input(f'        Quantos gols na partida {c}? ')))
+jogador['gols'] = partidas[:]
+jogador['total'] = sum(partidas)
+print('-=' * 30)
+print(jogador)
+print('-=' * 30)
+for k, v in jogador.items():
+    print(f'O campo {k} tem o valor {v}')
+print('-=' * 30)
+print(f'O jogador {jogador["nome"]} jogou {len(jogador["gols"])} partidas.')
+for i, v in enumerate(jogador['gols']):
+    print(f'    => Na partida {i}, fez {v} gols.')
+print(f'Foi um total de {jogador["total"]} gols.')
