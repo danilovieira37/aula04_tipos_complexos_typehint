@@ -99,21 +99,61 @@
 # print(f'Foi um total de {dados["total"]} gols.')
 
 # correcao ex 93
-jogador = dict()
-partidas = list()
-jogador['nome'] = str(input('Nome do jogador: '))
-tot = int(input(f'Quantas partidas {jogador["nome"]} jogou?'))
-for c in range(0, tot):
-    partidas.append(int(input(f'        Quantos gols na partida {c}? ')))
-jogador['gols'] = partidas[:]
-jogador['total'] = sum(partidas)
-print('-=' * 30)
-print(jogador)
-print('-=' * 30)
-for k, v in jogador.items():
-    print(f'O campo {k} tem o valor {v}')
-print('-=' * 30)
-print(f'O jogador {jogador["nome"]} jogou {len(jogador["gols"])} partidas.')
-for i, v in enumerate(jogador['gols']):
-    print(f'    => Na partida {i}, fez {v} gols.')
-print(f'Foi um total de {jogador["total"]} gols.')
+# jogador = dict()
+# partidas = list()
+# jogador['nome'] = str(input('Nome do jogador: '))
+# tot = int(input(f'Quantas partidas {jogador["nome"]} jogou?'))
+# for c in range(0, tot):
+#     partidas.append(int(input(f'        Quantos gols na partida {c}? ')))
+# jogador['gols'] = partidas[:]
+# jogador['total'] = sum(partidas)
+# print('-=' * 30)
+# print(jogador)
+# print('-=' * 30)
+# for k, v in jogador.items():
+#     print(f'O campo {k} tem o valor {v}')
+# print('-=' * 30)
+# print(f'O jogador {jogador["nome"]} jogou {len(jogador["gols"])} partidas.')
+# for i, v in enumerate(jogador['gols']):
+#     print(f'    => Na partida {i}, fez {v} gols.')
+# print(f'Foi um total de {jogador["total"]} gols.')
+
+# correcao ex 94
+galera = list()
+pessoa = dict()
+soma = media = 0
+while True:
+    pessoa.clear()
+    pessoa['nome'] = str(input('Nome: '))
+    while True:
+        pessoa['sexo'] = str(input('Sexo: [M/F] ')).upper()[0]
+        if pessoa['sexo'] in 'MF':
+            break
+        print('ERRO! Por favor, digite apenas M ou F.')
+    pessoa['idade'] = int(input('Idade: '))
+    soma+=pessoa['idade']
+    galera.append(pessoa.copy())
+    while True:
+        resp = str(input('Quer continuar? [S/N] ')).upper()[0]
+        if resp in 'SN':
+            break
+        print('ERRO! Responda apenas S ou N.')
+    if resp == 'N':
+        break
+print('-=' * 60)
+print(f'A) Ao todo temos {len(galera)} pessoas cadastradas.')
+media = soma / len(galera)
+print(f'B) A média de idade é de {media:5.2f} anos.')
+print(f'C) As mulheres cadastradas foram ', end='')
+for p in galera:
+    if p['sexo'] in 'Ff':
+        print(f'{p["nome"]} ', end='')
+print()
+print(f'D) Lista das pessoas que estão acima da média: ', end='')
+for p in galera:
+    if p['idade'] >= media:
+        print('   ')
+        for k, v in p.items():
+            print(f'{k} = {v}; ', end='')
+        print()
+print('<< ENCERRADO >>')
