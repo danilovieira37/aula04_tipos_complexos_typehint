@@ -84,3 +84,20 @@
 # idades_validas = [idade for idade in idades if idade >= 18]
 # print(idades_validas)
 
+# 8. Ordenação Personalizada
+# Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
+# pessoas: list = [
+#     {"nome": "Alice", "idade": 30},
+#     {"nome": "Carol", "idade": 20},
+#     {"nome": "Bob", "idade": 25}
+# ]
+# ordenado_por_nome: list = sorted(pessoas, key=lambda pessoa: pessoa["nome"])
+# print(ordenado_por_nome)
+# correcao ex. 7
+pessoas: list = [
+    {"nome": "Alice", "idade": 30},
+    {"nome": "Carol", "idade": 20},
+    {"nome": "Bob", "idade": 25}
+]
+pessoas.sort(key=lambda pessoa: pessoa["nome"])
+print(pessoas)
