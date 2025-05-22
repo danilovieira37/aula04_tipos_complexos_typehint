@@ -61,3 +61,26 @@
 # precos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
 # total = sum(precos[item] for item in lista_compras)
 # print(f"Preço total: {total}")
+
+# 6. Eliminação de Duplicatas
+# Objetivo: Dada uma lista de emails, remover todos os duplicados.
+# emails: list = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
+# emails_unicos: list = list(set(emails))
+# print(emails_unicos)
+# correcao ex. 6
+# emails = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
+# emails_unicos = list(set(emails))
+# print(emails_unicos)
+
+# 7.Filtragem de Dados
+# Objetivo: Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
+# def maior_ou_igual_a_18(x):
+#     return x >= 18
+# idades: list = [22, 15, 30, 17, 18]
+# idades_maiores_ou_iguais_a_18: list = list(filter(maior_ou_igual_a_18, idades))
+# print(idades_maiores_ou_iguais_a_18)
+# correcao ex. 7
+# idades = [22, 15, 30, 17, 18]
+# idades_validas = [idade for idade in idades if idade >= 18]
+# print(idades_validas)
+
