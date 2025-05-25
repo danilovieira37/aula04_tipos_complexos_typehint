@@ -94,10 +94,16 @@
 # ordenado_por_nome: list = sorted(pessoas, key=lambda pessoa: pessoa["nome"])
 # print(ordenado_por_nome)
 # correcao ex. 7
-pessoas: list = [
-    {"nome": "Alice", "idade": 30},
-    {"nome": "Carol", "idade": 20},
-    {"nome": "Bob", "idade": 25}
-]
-pessoas.sort(key=lambda pessoa: pessoa["nome"])
-print(pessoas)
+# pessoas: list = [
+#     {"nome": "Alice", "idade": 30},
+#     {"nome": "Carol", "idade": 20},
+#     {"nome": "Bob", "idade": 25}
+# ]
+# pessoas.sort(key=lambda pessoa: pessoa["nome"])
+# print(pessoas)
+
+# 9. Agregação de Dados
+# Objetivo: Dado um conjunto de números, calcular a média.
+numeros: list = [10, 20, 30, 40, 50]
+media: float = sum(numeros) / len(numeros)
+print(media)
