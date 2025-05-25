@@ -93,7 +93,7 @@
 # ]
 # ordenado_por_nome: list = sorted(pessoas, key=lambda pessoa: pessoa["nome"])
 # print(ordenado_por_nome)
-# correcao ex. 7
+# correcao ex. 8
 # pessoas: list = [
 #     {"nome": "Alice", "idade": 30},
 #     {"nome": "Carol", "idade": 20},
@@ -104,6 +104,28 @@
 
 # 9. Agregação de Dados
 # Objetivo: Dado um conjunto de números, calcular a média.
-numeros: list = [10, 20, 30, 40, 50]
-media: float = sum(numeros) / len(numeros)
-print(media)
+# numeros: list = [10, 20, 30, 40, 50]
+# media: float = sum(numeros) / len(numeros)
+# print(media)
+# correcao ex. 9
+# numeros = [10, 20, 30, 40, 50]
+# media = sum(numeros) / len(numeros)
+# print("Média:", media)
+
+# 10. Divisão de Dados em Grupos
+# Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
+# valores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# lista_impar: list = []
+# lista_par: list = []
+# for n in valores:
+#     if n % 2 == 0:
+#         lista_par.append(n)
+#     else:
+#         lista_impar.append(n)
+# print(f'Lista impar: {lista_impar} e Lista par: {lista_par}')
+# correcao ex. 10
+# valores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# pares = [valor for valor in valores if valor % 2 == 0]
+# impares = [valor for valor in valores if valor % 2 != 0]
+# print("Pares:", pares)
+# print("Ímpares:", impares)
