@@ -129,3 +129,20 @@
 # impares = [valor for valor in valores if valor % 2 != 0]
 # print("Pares:", pares)
 # print("Ímpares:", impares)
+
+# 11. Atualização de Dados
+# Objetivo: Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
+produtos = [
+    {"id": 1, "nome": "Teclado", "preço": 100},
+    {"id": 2, "nome": "Mouse", "preço": 80},
+    {"id": 3, "nome": "Monitor", "preço": 300}
+]
+def alterar_preco (lista, nome_antigo, preco_novo):
+    for item in lista:
+        if item["nome"] == nome_antigo:
+            item["preço"] = preco_novo
+alterar_preco(produtos, "Teclado", 150)
+print(produtos)
+
+
+    
