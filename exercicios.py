@@ -132,7 +132,7 @@
 
 # 11. Atualização de Dados
 # Objetivo: Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
-# produtos = [
+# produtos: lista = [
 #     {"id": 1, "nome": "Teclado", "preço": 100},
 #     {"id": 2, "nome": "Mouse", "preço": 80},
 #     {"id": 3, "nome": "Monitor", "preço": 300}
@@ -144,7 +144,7 @@
 # alterar_preco(produtos, "Teclado", 150)
 # print(produtos)
 # # Correcao ex. 11
-# produtos = [
+# produtos: lista = [
 #     {"id": 1, "nome": "Teclado", "preço": 100},
 #     {"id": 2, "nome": "Mouse", "preço": 80},
 #     {"id": 3, "nome": "Monitor", "preço": 300}
@@ -155,4 +155,14 @@
 #         produto["preço"] = 90
 # print(produtos)
 
-    
+# 12. Fusão de Dicionários
+# Objetivo: Dados dois dicionários, fundi-los em um único dicionário.
+# dicionario1 = {"a": 1, "b": 2}
+# dicionario2 = {"c": 3, "d": 4}
+# dicionario_unico = dicionario1 | dicionario2
+# print(dicionario_unico)
+# correcao ex. 12
+# dicionario1 = {"a": 1, "b": 2}
+# dicionario2 = {"c": 3, "d": 4}
+# dicionario_fundido = {**dicionario1, **dicionario2}
+# print(dicionario_fundido)
