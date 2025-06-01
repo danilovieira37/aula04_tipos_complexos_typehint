@@ -169,10 +169,27 @@
 
 # 13. Filtragem de Dados em Dicionário
 # Objetivo: Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
-# estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
-# estoque_com_qtde_maior_que_zero = {chave: valor for chave, valor in estoque.items() if valor > 0}
+# estoque: dict = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+# estoque_com_qtde_maior_que_zero: dict = {chave: valor for chave, valor in estoque.items() if valor > 0}
 # print(estoque_com_qtde_maior_que_zero)
 # correcao ex. 13
-# estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
-# estoque_positivo = {produto: quantidade for produto, quantidade in estoque.items() if quantidade > 0}
+# estoque: dict = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+# estoque_positivo: dict = {produto: quantidade for produto, quantidade in estoque.items() if quantidade > 0}
 # print(estoque_positivo)
+
+# 14. Extração de Chaves e Valores
+# Objetivo: Dado um dicionário, criar listas separadas para suas chaves e valores.
+dicionario: dict = {"a": 1, "b": 7, "c": 3}
+lista_chaves: list = []
+lista_valores: list = []
+for k in dicionario.keys():
+    lista_chaves.append(k)
+for v in dicionario.values():
+    lista_valores.append(v)
+print(f'A lista de chaves é: {lista_chaves}')
+print(f'A lista de valores é: {lista_valores}')
+# correcao ex. 14
+chaves = list(dicionario.keys())
+valores = list(dicionario.values())
+print("Chaves:", chaves)
+print("Valores:", valores)
